@@ -1,12 +1,12 @@
-localStorage.setItem("word", "")
+localStorage.setItem("word", "");
 
 function search() {
-    localStorage.setItem("SearchResult", "")
-    var linksForLocal = []
-    var allPages = pageData
-    var catalogLinks = catalogData
-    var word = document.getElementById("search").value
-    localStorage.setItem("word", word)
+    localStorage.setItem("SearchResult", "");
+    var linksForLocal = [];
+    var allPages = pageData;
+    var catalogLinks = catalogData;
+    var word = document.getElementById("search").value;
+    localStorage.setItem("word", word);
     word = word.toUpperCase()
     for (i = 0; i < allPages.length; i++) {
         var link1 = allPages[i]["link"];
@@ -15,11 +15,11 @@ function search() {
         var image = allPages[i]["image"];
         image = "../" + image
         if (link1.length > 1)
-            var link1 = link1.split("\\")
-        var long = link1.length
-        link1 = link1[long - 1]
-        link2 = "../../page/" + link1
-        link1 = "../page/" + link1
+            var link1 = link1.split("\\");
+        var long = link1.length;
+        link1 = link1[long - 1];
+        link2 = "../../page/" + link1;
+        link1 = "../page/" + link1;
 
         if (title !== undefined) {
             if (title.toUpperCase().indexOf(word) > -1 || table.toUpperCase().indexOf(word) > -1 || link1.toUpperCase().indexOf(word) > -1) {
@@ -28,7 +28,7 @@ function search() {
                     if (link2 == catalogLinks[k]["link"]) {
                         var haveAlready = 0;
                         if (linksForLocal.length == 0) {
-                            linksForLocal.push({ "link": link2, "title": title, "table": table, "image": image, "word": word })
+                            linksForLocal.push({ "link": link2, "title": title, "table": table, "image": image, "word": word });
                         } else {
                             for (l = 0; l < linksForLocal.length; l++) {
                                 if (link2 == linksForLocal[l]["link"]) {
@@ -36,7 +36,7 @@ function search() {
                                 }
                             }
                             if (haveAlready == 0)
-                                linksForLocal.push({ "link": link2, "title": title, "table": table, "image": image, "word": word })
+                                linksForLocal.push({ "link": link2, "title": title, "table": table, "image": image, "word": word });
                         }
                     }
                 }
@@ -44,5 +44,5 @@ function search() {
         }
     }
 }
-localStorage.setItem("SearchResult", JSON.stringify(linksForLocal))
+localStorage.setItem("SearchResult", JSON.stringify(linksForLocal));
 window.open("..\\shared\\Script\\searchResult.html");
