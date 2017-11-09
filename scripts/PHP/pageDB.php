@@ -8,11 +8,10 @@
         $catalogName = $_SESSION["catalogName"];
         $catalogPath = $_SESSION["catalogPath"];
         $directory = '..\..\page';
-        $myArray=array();
         
         $di = new RecursiveDirectoryIterator($directory);
     
-        foreach (new RecursiveIteratorIterator($di) as $filename => $file) 
+        foreach (new RecursiveIteratorIterator($di) as $filename) 
         {   
             if($filename != false && $filename != "..\..\page\." && $filename != "..\..\page\.." )
             { 
