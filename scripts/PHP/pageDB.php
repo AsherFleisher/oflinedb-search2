@@ -5,8 +5,6 @@
       function createPageDB()
       {
         $links3=["a"];
-        $catalogName = $_SESSION["catalogName"];
-        $catalogPath = $_SESSION["catalogPath"];
         $directory = '..\..\page';
         
         $di = new RecursiveDirectoryIterator($directory);
