@@ -1,0 +1,31 @@
+<html>
+
+<head></head>
+
+<body>
+
+    <h3>Create "page" Data Base and add a link to the catalogs "home.htm"</h3><br/><br/>
+
+    <button name="pageDB" onclick="ajax(this)">Create page Data Base</button>(This will only Create the Data Base NOT A LINK)
+
+
+    <br/><br/><br/><br/><br/> ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- <br/><br/>
+
+    <h3>Create catalog Data Base and add a link to the catalogs "home.htm"</h3>
+    <h4>Please insert catalog number and full path in the inputs</h4>
+    <br/><br/> Catalog number<input id="catalogName" placeholder="Number example: 5000"></input>
+    Catalog path<input id="catalogPath" placeholder="Path example: CA273-00490 - Parts Catalog 5000_files">
+    <br/><br/>
+    <button name="catalogDB" onclick="ajax(this)">Create catalog Data Base</button>(This will also add the db link to the "home.htm" page)
+
+    <br/><br/>
+    <div id=ajax></div>
+    <br/><br/>
+    <button name="highlight" onclick="ajax(this)"></button>
+    <script src="ajax.js">
+    </script>
+</body>
+
+
+
+</html>
