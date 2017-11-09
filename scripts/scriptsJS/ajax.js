@@ -1,15 +1,15 @@
 function ajax(a) {
 
-    var action = a.getAttribute('name')
+    var action = a.getAttribute('name');
 
     if (document.getElementById("catalogPath")) {
-        var catalogPath = document.getElementById("catalogPath").value
+        var catalogPath = document.getElementById("catalogPath").value;
     }
     if (document.getElementById("catalogName")) {
-        var catalogName = document.getElementById("catalogName").value
+        var catalogName = document.getElementById("catalogName").value;
     }
 
-    var data = new FormData()
+    var data = new FormData();
     data.append("action", action);
     data.append("catalogPath", catalogPath);
     data.append("catalogName", catalogName);
@@ -26,5 +26,5 @@ function ajax(a) {
 }
 
 function open(link) {
-    window.open(link, '_blank')
+    window.open(link, '_blank');
 }
